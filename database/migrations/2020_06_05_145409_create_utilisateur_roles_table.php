@@ -18,7 +18,7 @@ class CreateUtilisateurRolesTable extends Migration
             $table->integer('IDRole')->unsigned;
 
             $table->foreign('IDUtilisateur')->references('IDUtilisateur')->on('utilisateurs');
-            $table->foreign('IDRole')->references('id')->on('role');
+            $table->foreign('IDRole')->references('IDRole')->on('roles');
 
             $table->timestamps();
         });

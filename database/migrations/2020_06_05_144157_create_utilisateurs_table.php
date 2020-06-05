@@ -25,11 +25,11 @@ class CreateUtilisateursTable extends Migration
             $table->string('Photo')->nullable();
             $table->string('Status', 50)->default('Disponibe'); // Disponible - occupé - invisible - congé
             $table->string('Password', 255);
-            $table->int('IDAdresse');
-            $table->int('IDCategorie')->nullable();
+            $table->integer('IDAdresse');
+            $table->integer('IDCategorie')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
-            $table->timesstamps();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
