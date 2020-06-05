@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        Factory(App\Utilisateur::class, 10)->create();
+
+        App\Role::create([
+            'nom' => 'Client'
+        ]);
+
+        App\Role::create([
+            'nom'=>'Contracteur'
+        ]);
     }
 }
