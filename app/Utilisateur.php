@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -14,7 +13,7 @@ class Utilisateur extends Model
      *
      * @var string
      */
-    protected $primaryKey = 'IDContracteur';
+    protected $primaryKey = 'IDUtilisateur';
 
     /**
      * The attributes that are mass assignable.
@@ -41,5 +40,7 @@ class Utilisateur extends Model
         'DateInscription' => 'datetime'
     ];
 
-   
+    public function roles(){
+         return $this->belongsToMany(Role::class, 'utilisateur_roles');
+    }
 }
